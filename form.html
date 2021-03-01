@@ -1,0 +1,29 @@
+<html>
+  <head><b>Establishments Near UW-Tacoma</b></head>
+  <form>
+  <br>Name of Establishment:<br><input type="text" id="input_name"><br><br>
+  Do you like this Establishment:<br>
+  <input type="radio" id="input_male" name="like" value="Yes">
+    <label for="yes">Yes</label><br>
+  <input type="radio" id="input_female" name="like" value="No">
+    <label for="no">No</label><br>
+  <br>Favorite Beverage:<br><input type="text" id="input_beverage"><br><br>
+  </form>
+  <script>
+  if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            position => {
+             console.log(position.coords.latitude);
+             console.log(position.coords.longitude);
+             lat = (position.coords.latitude);
+             lon = position.coords.longitude);
+            },
+            error => {
+               console.log(error.message);
+            }
+          );
+  } else {
+          console.log("Your browser does not support geolocation API ");
+  }
+  </script>
+</html>
